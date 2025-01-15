@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-mainBlack text-white;
+}
 .screen {
   @apply md:w-[900px] mx-auto;
 }
