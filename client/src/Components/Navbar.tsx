@@ -2,8 +2,8 @@ import { LuSquarePen } from "react-icons/lu"
 
 const Navbar = () => {
   return (
-    <nav className=" select-none flex border border-zinc-600 rounded-md my-4 py-2 justify-between items-center md:px-2">
-      <a href="" className=" text-xl font-semibold px-3">
+    <nav className=" select-none flex border border-zinc-600 rounded-md  py-2 justify-between items-center px-2">
+      <a href="" className=" text-xl font-semibold">
         Fap-stack
       </a>
       <a
