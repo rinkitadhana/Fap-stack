@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .screen {
-  @apply md:w-[900px];
+  @apply md:w-[900px] mx-auto;
 }
