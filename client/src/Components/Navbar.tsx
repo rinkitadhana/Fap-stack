@@ -1,3 +1,4 @@
+import { FiGithub } from "react-icons/fi"
 import { LuSquarePen } from "react-icons/lu"
 
 const Navbar = () => {
@@ -10,13 +11,25 @@ const Navbar = () => {
         />
         <span className=" text-xl font-semibold">Fap-stack</span>
       </a>
-      <a
-        href=""
-        className=" flex gap-1.5 select-none items-center border border-zinc-600 bg-red-500 hover:bg-transparent transition duration-200 font-medium text-white rounded-md px-2 py-1"
-      >
-        <LuSquarePen />
-        Post
-      </a>
+      <div className=" flex gap-2 items-center">
+        <a
+          href="https://github.com/rinkitadhana/Fap-stack"
+          target="_blank"
+          className=" flex gap-1.5 select-none items-center border border-zinc-600 bg-transparent transition duration-200 font-medium text-white rounded-md px-2 py-1"
+        >
+          <span>
+            <FiGithub />
+          </span>
+          <span>Github</span>
+        </a>
+        <a
+          href=""
+          className=" flex gap-1.5 select-none items-center border border-zinc-600 bg-red-500 hover:bg-transparent transition duration-200 font-medium text-white rounded-md px-2 py-1"
+        >
+          <LuSquarePen />
+          Post
+        </a>
+      </div>
     </nav>
   )
 }
