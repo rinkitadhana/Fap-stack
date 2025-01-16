@@ -1,10 +1,13 @@
+import FapPost from "../Components/FapPost";
+
 const Home = () => {
   return (
-    <div>
-      this is out home page
-      <p>letsgo</p>
+    <div className="flex flex-col gap-2">
+      <FapPost />
+      <FapPost />
+      <FapPost />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
