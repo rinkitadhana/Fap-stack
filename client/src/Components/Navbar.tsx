@@ -3,8 +3,12 @@ import { LuSquarePen } from "react-icons/lu"
 const Navbar = () => {
   return (
     <nav className=" select-none flex border border-zinc-600 rounded-md  py-2 justify-between items-center px-2">
-      <a href="" className=" text-xl font-semibold">
-        Fap-stack
+      <a href="" className=" flex items-center gap-2 px-2">
+        <img
+          className=" size-8"
+          src="https://img.icons8.com/m_sharp/200/FA5252/arch-linux.png"
+        />
+        <span className=" text-xl font-semibold">Fap-stack</span>
       </a>
       <a
         href=""
