@@ -34,7 +34,7 @@ const Post = () => {
   return (
     <section className=" flex flex-col  gap-2 border border-zinc-600 rounded-md p-3">
       <div className="flex">
-        <div className="flex flex-col items-center gap-4">
+        <div className=" select-none flex flex-col items-center gap-4">
           <label
             className="relative cursor-pointer group"
             htmlFor="profile-pic-input"
