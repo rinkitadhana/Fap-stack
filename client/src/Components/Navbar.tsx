@@ -3,7 +3,7 @@ import { LuSquarePen } from "react-icons/lu"
 
 const Navbar = () => {
   return (
-    <nav className=" select-none flex border border-zinc-600 rounded-md  py-2 justify-between items-center px-2">
+    <nav className="select-none flex border border-zinc-600 rounded-md  py-2 justify-between items-center px-2">
       <a href="" className=" flex items-center gap-2 px-2">
         <img
           className=" size-8"
@@ -11,6 +11,7 @@ const Navbar = () => {
         />
         <span className=" text-xl font-semibold">Fap-stack</span>
       </a>
+
       <div className=" flex gap-2 items-center">
         <a
           href="https://github.com/rinkitadhana/Fap-stack"

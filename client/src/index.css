@@ -6,7 +6,7 @@ body {
   @apply bg-mainBlack text-white;
 }
 .screen {
-  @apply md:w-[700px] mx-auto my-4 px-2 md:px-0;
+  @apply md:w-[700px] mx-auto my-2 px-2 md:px-0;
 }
 .post-input {
   @apply py-1 w-full px-1  placeholder-zinc-400 placeholder:select-none md:placeholder:text-lg placeholder:text-[0.95rem]  md:text-lg text-base bg-transparent outline-none;
