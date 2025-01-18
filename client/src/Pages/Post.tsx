@@ -96,13 +96,8 @@ const Post = () => {
             </p>
           )}
           {hasValue && !hasDomain && (
-            <p className=" select-none hidden md:block text-red-400 border border-red-400 rounded-md py-1 px-3 text-sm">
+            <p className=" select-none block text-red-400 border border-red-400 rounded-md py-1 px-3 text-sm">
               Please enter a valid URL
-            </p>
-          )}
-          {hasValue && !hasDomain && (
-            <p className="md:hidden block select-none text-red-400 border border-red-400 rounded-md py-1 px-3 text-sm">
-              Provide a valid "https://" URL.
             </p>
           )}
         </div>
