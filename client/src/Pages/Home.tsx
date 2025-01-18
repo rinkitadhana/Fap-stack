@@ -1,4 +1,3 @@
-import FapPost from "../Components/FapPost"
 import PostBox from "../Components/PostBox"
 
 const Home = () => {
@@ -7,7 +6,6 @@ const Home = () => {
       <PostBox />
       <PostBox />
       <PostBox />
-      <FapPost />
     </div>
   )
 }

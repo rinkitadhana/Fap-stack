@@ -12,7 +12,7 @@ const App = () => {
       <div className=" flex flex-col gap-2">
         <Navbar />
         <Post />
-        <Category />
+        {/* <Category /> */}
         <Home />
       </div>
       <PostButtom />
