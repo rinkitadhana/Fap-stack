@@ -11,3 +11,7 @@ body {
 .post-input {
   @apply py-1 w-full px-1  placeholder-zinc-400 placeholder:select-none md:placeholder:text-lg placeholder:text-[0.95rem]  md:text-lg text-base bg-transparent outline-none;
 }
+
+.btn {
+  @apply rounded-md text-2xl;
+}
