@@ -1,3 +1,4 @@
+import Footer from "./Components/Footer"
 import Navbar from "./Components/Navbar"
 import PostButtom from "./Components/PostButtom"
 import Screen from "./Layout/Screen"
@@ -15,6 +16,7 @@ const App = () => {
         <Home />
       </div>
       <PostButtom />
+      <Footer />
     </Screen>
   )
 }
