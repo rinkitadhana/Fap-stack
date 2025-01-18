@@ -10,10 +10,10 @@ function Footer() {
           />
           <span className=" text-xl font-semibold">Fap-stack</span>
         </div>
-        <p className="text-sm ">© 2025 Gruz. All rights reserved.</p>
+        <p className="text-sm ">© 2025 Fap-stack. All rights reserved.</p>
       </div>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer
