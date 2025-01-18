@@ -1,8 +1,8 @@
 function Footer() {
   return (
     <footer>
-      <div className=" border-t border-zinc-700 my-6"></div>
-      <div className=" flex flex-col gap-2.5 items-center">
+      <div className=" border-t border-zinc-700 my-2" />
+      <div className=" flex flex-col gap-2 items-center py-2">
         <div className=" flex gap-2 items-center">
           <img
             className=" size-6"
