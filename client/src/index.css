@@ -15,3 +15,7 @@ body {
 .btn {
   @apply rounded-md text-2xl;
 }
+
+.cat-btn {
+  @apply select-none border border-zinc-700 rounded-md px-2 py-0.5 hover:bg-zinc-800 transition-colors duration-200 cursor-pointer;
+}
