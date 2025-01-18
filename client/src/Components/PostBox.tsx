@@ -1,11 +1,10 @@
-import { useState } from "react"
 import { BiDislike } from "react-icons/bi"
 import { BiLike } from "react-icons/bi"
 import { FiShare } from "react-icons/fi"
 import { MdOutlineVpnLock } from "react-icons/md"
 
 const PostBox = () => {
-  const [vpn, setVpn] = useState(true)
+  const vpn = true
 
   const link =
     "https://github.com/rinkitadhana/Fap-stack//github.com/rinkitadhana/Fap-stack"
