@@ -1,17 +1,17 @@
-import { useState } from "react";
+import { useState } from "react"
 import {
   BiDownvote,
   BiUpvote,
   BiSolidUpvote,
   BiSolidDownvote,
-} from "react-icons/bi";
-import { GoDotFill } from "react-icons/go";
-import { BsDot } from "react-icons/bs";
-import Tags from "./Tags";
+} from "react-icons/bi"
+import { GoDotFill } from "react-icons/go"
+import { BsDot } from "react-icons/bs"
+import Tags from "./Tags"
 
 function FapPost() {
-  const [downvote, setDownvote] = useState(false);
-  const [upvote, setUpvote] = useState(false);
+  const [downvote, setDownvote] = useState(false)
+  const [upvote, setUpvote] = useState(false)
   return (
     <div className="min-h-4 border border-zinc-600 rounded-lg p-4 drop-shadow-lg">
       <div className="flex justify-between items-center pb-4">
@@ -39,9 +39,10 @@ function FapPost() {
         <div className="text-xl flex flex-col flex-1 justify-between">
           <div>
             <a className="hover:text-blue-300 hover:" href="#">
-              Hot Indian Bhabhi with young devar full masti mms leak
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Incidunt, sapiente!
             </a>
-            <p className="text-gray-500">Brazzers</p>
+            <p className="text-gray-500">Youtube</p>
           </div>
           <div className="flex gap-2 flex-wrap">
             <Tags tagName="Indian" />
@@ -82,7 +83,7 @@ function FapPost() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default FapPost;
+export default FapPost
