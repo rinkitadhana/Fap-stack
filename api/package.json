@@ -1,20 +1,26 @@
 {
-  "name": "api",
+  "name": "fapstack-api",
   "version": "1.0.0",
-  "description": "Backend for fap-stack",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "node dist/index.js",
+    "dev": "nodemon",
+    "build": "tsc"
   },
   "author": "Rinkit Adhana",
   "license": "ISC",
+  "description": "Api for fap-stack",
   "devDependencies": {
     "@types/express": "^5.0.0",
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "^22.10.7",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
   }
 }
