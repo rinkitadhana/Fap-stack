@@ -21,7 +21,7 @@ const PostBox = () => {
     }
   }, [])
 
-  const vpn = true
+  const vpn = false
   const link =
     "https://github.com/rinkitadhana/Fap-stack/suidvaujdvaujsdvajsdvghujasdvutgyasdvsvdtusvdtyuvduygavuytvuy"
 
@@ -45,10 +45,10 @@ const PostBox = () => {
           <div className=" text-sm opacity-75">• 15 hrs ago</div>
         </div>
         <div
-          className={`  animate-pulse select-none flex gap-1.5 items-center  rounded-md px-2.5 py-0.5  ${
+          className={`  animate-pulse select-none flex gap-1.5 items-center  rounded-md px-2.5 py-0.5 border ${
             vpn
-              ? "text-green-400  bg-green-400/10"
-              : "text-red-400  bg-red-400/10"
+              ? "text-green-600 border-green-600   bg-green-600/10"
+              : "text-red-500 border-red-500   bg-red-500/10"
           } `}
         >
           <span>
