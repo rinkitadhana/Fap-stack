@@ -2,7 +2,7 @@ import mongoose, { Document } from "mongoose"
 
 interface IPost extends Document {
   avatar: string
-  author: string
+  username: string
   link: string
   createdAt: Date
   UpdatedAt: Date
@@ -13,7 +13,7 @@ const postSchema = new mongoose.Schema<IPost>(
     avatar: {
       type: String,
     },
-    author: {
+    username: {
       type: String,
     },
     link: {

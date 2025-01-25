@@ -4,8 +4,8 @@ import errorHandler from "../utils/errorHandler"
 
 const postHandler = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { avatar, author, link } = req.body
-    if (!avatar || !author || !link) {
+    const { avatar, username, link } = req.body
+    if (!avatar || !username || !link) {
       res.status(400).json({ message: "Missing credentials!" })
       return
     }
@@ -18,7 +18,7 @@ const postHandler = async (req: Request, res: Response): Promise<void> => {
 
     const newPost = new Post({
       avatar,
-      author,
+      username,
       link,
     })
     newPost.save()
