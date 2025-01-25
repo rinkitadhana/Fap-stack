@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import Post from "../models/post-model"
+import { IPost, Post } from "../models/post-model"
 import errorHandler from "../utils/errorHandler"
 
 const postHandler = async (req: Request, res: Response): Promise<void> => {
@@ -10,7 +10,7 @@ const postHandler = async (req: Request, res: Response): Promise<void> => {
       return
     }
 
-    const post = await Post.findOne({ link })
+    const post = await Post.findOne<IPost>({ link })
     if (post) {
       res.status(400).json({ message: "Post already exists!" })
       return

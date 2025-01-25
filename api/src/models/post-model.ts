@@ -29,4 +29,4 @@ const postSchema = new mongoose.Schema<IPost>(
 
 const Post = mongoose.model<IPost>("Post", postSchema)
 
-export default Post
+export { Post, IPost }
