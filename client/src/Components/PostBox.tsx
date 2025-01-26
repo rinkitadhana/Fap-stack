@@ -1,29 +1,43 @@
-import { useEffect, useState } from "react"
-import { useRef } from "react"
-import { BiDislike } from "react-icons/bi"
-import { BiLike } from "react-icons/bi"
-import { FiShare } from "react-icons/fi"
-import { MdOutlineVpnLock } from "react-icons/md"
+import { useEffect, useState } from "react";
+import { useRef } from "react";
+import { BiDislike } from "react-icons/bi";
+import { BiLike } from "react-icons/bi";
+import { FiShare } from "react-icons/fi";
+import { MdOutlineVpnLock } from "react-icons/md";
 
-const PostBox = () => {
-  const [isClicked, setIsClicked] = useState(false)
-  const boxRef = useRef<HTMLDivElement>(null)
+interface PostProps {
+  username: string;
+  timePosted: number;
+  urlPost: any;
+  numLikes: number;
+  numDislikes: number;
+  numShares: number;
+  vpnRequired: boolean;
+}
+
+function PostBox({
+  username,
+  timePosted,
+  urlPost,
+  numLikes,
+  numDislikes,
+  numShares,
+  vpnRequired,
+}: PostProps) {
+  const [isClicked, setIsClicked] = useState(false);
+  const boxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (boxRef.current && !boxRef.current.contains(event.target as Node)) {
-        setIsClicked(false)
+        setIsClicked(false);
       }
-    }
-    document.addEventListener("mousedown", handleClickOutside)
+    };
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [])
-
-  const vpn = false
-  const link =
-    "https://github.com/rinkitadhana/Fap-stack/suidvaujdvaujsdvajsdvghujasdvutgyasdvsvdtusvdtyuvduygavuytvuy"
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div
@@ -40,13 +54,15 @@ const PostBox = () => {
               className=" select-none size-8 rounded-full"
               alt="profile"
             />
-            <span className="font-medium">Username</span>
+            <span className="font-medium select-none">{username}</span>
           </div>
-          <div className=" text-sm opacity-75">• 15 hrs ago</div>
+          <div className=" text-sm opacity-75 select-none">
+            • {timePosted} hrs ago
+          </div>
         </div>
         <div
           className={`  animate-pulse select-none flex gap-1.5 items-center  rounded-md px-2.5 py-0.5 border ${
-            vpn
+            vpnRequired
               ? "text-green-600 border-green-600   bg-green-600/10"
               : "text-red-500 border-red-500   bg-red-500/10"
           } `}
@@ -70,7 +86,7 @@ const PostBox = () => {
               src="https://i.pinimg.com/736x/18/97/29/189729516ae44062a9d98e74b7394dcf.jpg"
             />
             <p className="whitespace-nowrap overflow-hidden text-ellipsis absolute bottom-2 right-2 left-2 bg-black/50 backdrop-blur-[2px] px-2 py-1 text-sm rounded-md">
-              {link}
+              {urlPost}
             </p>
           </div>
         </a>
@@ -84,18 +100,27 @@ const PostBox = () => {
       </div>
       <div className=" flex gap-2"></div>
       <div className=" flex justify-end gap-4  px-4 items-center">
-        <button className=" btn">
-          <BiLike />
-        </button>
-        <button className=" btn">
-          <BiDislike />
-        </button>
-        <button className=" text-xl">
-          <FiShare />
-        </button>
+        <div className="flex gap-2 items-center">
+          {numLikes}
+          <button className=" btn">
+            <BiLike />
+          </button>
+        </div>
+        <div className="flex gap-2 items-center">
+          {numDislikes}
+          <button className=" btn">
+            <BiDislike />
+          </button>
+        </div>
+        <div className="flex gap-2 items-center">
+          {numShares}
+          <button className=" text-xl">
+            <FiShare />
+          </button>
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default PostBox
+export default PostBox;
