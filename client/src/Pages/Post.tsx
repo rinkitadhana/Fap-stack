@@ -1,35 +1,26 @@
-import { useState } from "react"
-import { FaCircleExclamation, FaPencil } from "react-icons/fa6"
+import { useState } from "react";
+import { FaCircleExclamation, FaPencil } from "react-icons/fa6";
+import Modal from "./ImagesModal";
 
 const Post = () => {
-  const [isActive, setIsActive] = useState(false)
-  const [hasValue, setHasValue] = useState(false)
-  const [hasHttps, setHasHttps] = useState(false)
-  const [hasDomain, setHasDomain] = useState(false)
-  const [preview, setPreview] = useState<string | null>(null)
+  const [isActive, setIsActive] = useState(false);
+  const [hasValue, setHasValue] = useState(false);
+  const [hasHttps, setHasHttps] = useState(false);
+  const [hasDomain, setHasDomain] = useState(false);
+  const [preview, setPreview] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const defaultImage =
-    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
-
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]
-    if (file) {
-      const reader = new FileReader()
-      reader.onloadend = () => {
-        setPreview(reader.result as string)
-      }
-      reader.readAsDataURL(file)
-    }
-  }
+    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png";
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value
-    setHasValue(value.length > 0)
+    const value = e.target.value;
+    setHasValue(value.length > 0);
 
-    setHasHttps(value.startsWith("https://"))
+    setHasHttps(value.startsWith("https://"));
 
-    const domainPattern = /^https:\/\/.+\..+/
-    setHasDomain(domainPattern.test(value))
-  }
+    const domainPattern = /^https:\/\/.+\..+/;
+    setHasDomain(domainPattern.test(value));
+  };
 
   return (
     <section className=" flex flex-col  gap-2 border border-zinc-600 rounded-md p-3">
@@ -40,27 +31,25 @@ const Post = () => {
             htmlFor="profile-pic-input"
           >
             <div className="size-9 rounded-full overflow-hidden">
-              <img
-                src={preview || defaultImage}
-                alt="Profile"
-                className="w-full h-full object-cover"
-              />
+              <button
+                onClick={() => {
+                  setIsModalOpen(true);
+                }}
+              >
+                <img
+                  src={preview || defaultImage}
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                />
 
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-200 rounded-full flex items-center justify-center">
-                <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <FaPencil />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-200 rounded-full flex items-center justify-center">
+                  <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    <FaPencil />
+                  </div>
                 </div>
-              </div>
+              </button>
             </div>
           </label>
-
-          <input
-            type="file"
-            id="profile-pic-input"
-            accept="image/*"
-            onChange={handleImageChange}
-            className="hidden"
-          />
         </div>
 
         <div className="flex flex-col gap-2 w-[90%] px-3">
@@ -112,8 +101,18 @@ const Post = () => {
           Post
         </button>
       </div>
+      {isModalOpen && (
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => {
+            setIsModalOpen(false);
+          }}
+          title={"Select Your Avatar"}
+          setPreview={setPreview}
+        />
+      )}
     </section>
-  )
-}
+  );
+};
 
-export default Post
+export default Post;

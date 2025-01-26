@@ -5,8 +5,10 @@ export default {
     extend: {
       colors: {
         mainBlack: "#111111",
+        borderColor: "#3F3F46",
+        primaryColor: "#F44336",
       },
     },
   },
   plugins: [],
-}
+};
