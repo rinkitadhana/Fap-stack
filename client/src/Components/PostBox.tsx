@@ -101,19 +101,19 @@ function PostBox({
       <div className=" flex gap-2"></div>
       <div className=" flex justify-end gap-4  px-4 items-center">
         <div className="flex gap-2 items-center">
-          {numLikes}
+          <p className="select-none">{numLikes}</p>
           <button className=" btn">
             <BiLike />
           </button>
         </div>
         <div className="flex gap-2 items-center">
-          {numDislikes}
+          <p className="select-none">{numDislikes}</p>
           <button className=" btn">
             <BiDislike />
           </button>
         </div>
         <div className="flex gap-2 items-center">
-          {numShares}
+          <p className="select-none">{numShares}</p>
           <button className=" text-xl">
             <FiShare />
           </button>
