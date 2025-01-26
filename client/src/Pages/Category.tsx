@@ -7,8 +7,8 @@ interface CategoryProps {
 const Category = ({ setCategory }: CategoryProps) => {
   const [openCategory, setOpenCategory] = useState("");
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setCategory(e.target.textContent);
-    setOpenCategory(e.target.textContent);
+    setCategory((e.target as HTMLButtonElement).textContent || "");
+    setOpenCategory((e.target as HTMLButtonElement).textContent || "");
   };
   return (
     <section className="border h-full border-zinc-700 rounded-md p-3 flex flex-col gap-2">
