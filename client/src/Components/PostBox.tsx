@@ -39,6 +39,11 @@ function PostBox({
     };
   }, []);
 
+  const getDomain = (link: string) => {
+    const url = new URL(link);
+    return url.hostname;
+  };
+
   return (
     <div
       ref={boxRef}
@@ -95,7 +100,7 @@ function PostBox({
           target="_blank"
           className=" text-sm opacity-75 hover:opacity-100 transition-all duration-200"
         >
-          From loda.io
+          From {getDomain(urlPost)}
         </a>
       </div>
       <div className=" flex gap-2"></div>
