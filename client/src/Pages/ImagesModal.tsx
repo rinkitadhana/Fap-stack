@@ -22,7 +22,9 @@ function Modal({ isOpen, onClose, title, setPreview }: ModalProps) {
         className="w-full max-w-md rounded-2xl shadow-lg p-6 relative bg-mainBlack/80 backdrop-blur-lg flex flex-col gap-5"
       >
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-semibold text-white">{title}</h2>
+          <h2 className="text-2xl font-semibold text-white select-none">
+            {title}
+          </h2>
         </div>
 
         <div className="grid grid-cols-3 gap-x-2 gap-y-4 ">
@@ -36,7 +38,7 @@ function Modal({ isOpen, onClose, title, setPreview }: ModalProps) {
               <img
                 src={`./Img/Avatar/${src}.png`}
                 alt="Profile"
-                className="size-24"
+                className="size-24 select-none"
               />
             </button>
           ))}
