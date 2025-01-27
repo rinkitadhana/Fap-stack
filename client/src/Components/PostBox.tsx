@@ -119,7 +119,7 @@ function PostBox({
             <FiShare />
           </button>
         </div> */}
-        <div className=" hidden"> {numShares}</div> //error hatane ke lia kia
+        <div className=" hidden"> {numShares}</div>
         hai
         <div>
           <button
