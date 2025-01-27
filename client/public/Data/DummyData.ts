@@ -7,6 +7,7 @@ const posts = [
     numDislikes: 5,
     numShares: 7,
     vpnRequired: false,
+    avatar: "boy",
   },
   {
     username: "CodeMaster",
@@ -25,6 +26,7 @@ const posts = [
     numDislikes: 2,
     numShares: 8,
     vpnRequired: true,
+    avatar: "man",
   },
   {
     username: "BugHunter",
@@ -34,6 +36,7 @@ const posts = [
     numDislikes: 12,
     numShares: 5,
     vpnRequired: false,
+    avatar: "profile",
   },
   {
     username: "ReactFanatic",
@@ -52,6 +55,7 @@ const posts = [
     numDislikes: 3,
     numShares: 20,
     vpnRequired: true,
+    avatar: "chicken",
   },
   {
     username: "CloudCoder",
@@ -89,6 +93,6 @@ const posts = [
     numShares: 12,
     vpnRequired: false,
   },
-]
+];
 
-export default posts
+export default posts;
