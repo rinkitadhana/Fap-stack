@@ -42,6 +42,7 @@ function PostBox({
     return url.hostname
   }
 
+  const siteLink = getDomain(urlPost)
   return (
     <div
       ref={boxRef}
@@ -92,35 +93,16 @@ function PostBox({
           </div>
         </a>
         <a
-          href=""
+          href={siteLink}
           target="_blank"
           className=" text-sm opacity-75 hover:opacity-100 transition-all duration-200"
         >
-          From {getDomain(urlPost)}
+          From {siteLink}
         </a>
       </div>
       <div className="flex justify-between gap-4 items-center"></div>
       <div className=" flex justify-between gap-4   items-center">
-        {/* <div className="flex gap-2 items-center">
-          <p className="select-none">{numLikes}</p>
-          <button className=" btn">
-            <BiLike />
-          </button>
-        </div>
-        <div className="flex gap-2 items-center">
-          <p className="select-none">{numDislikes}</p>
-          <button className=" btn">
-            <BiDislike />
-          </button>
-        </div>
-        <div className="flex gap-2 items-center">
-          <p className="select-none">{numShares}</p>
-          <button className=" text-xl">
-            <FiShare />
-          </button>
-        </div> */}
         <div className=" hidden"> {numShares}</div>
-        hai
         <div>
           <button
             title="report"
