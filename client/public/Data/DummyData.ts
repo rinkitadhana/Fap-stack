@@ -2,7 +2,7 @@ const posts = [
   {
     username: "TechGuru",
     timePosted: 2,
-    urlPost: "https://github.com/techguru/awesome-project/abc123xyz456",
+    urlPost: "https://www.pornhub.com/view_video.php?viewkey=66e192c653ed0",
     numLikes: 23,
     numDislikes: 5,
     numShares: 7,
@@ -11,7 +11,7 @@ const posts = [
   {
     username: "CodeMaster",
     timePosted: 12,
-    urlPost: "https://github.com/codemaster/nextjs-template/qwe987rty654",
+    urlPost: "https://www.pornhub.com/view_video.php?viewkey=66e192c653ed0",
     numLikes: 45,
     numDislikes: 1,
     numShares: 15,
@@ -20,7 +20,7 @@ const posts = [
   {
     username: "DevDiva",
     timePosted: 0,
-    urlPost: "https://github.com/devdiva/ui-kit-project/lmn098opq765",
+    urlPost: "https://www.pornhub.com/view_video.php?viewkey=66e192c653ed0",
     numLikes: 10,
     numDislikes: 2,
     numShares: 8,
@@ -29,7 +29,7 @@ const posts = [
   {
     username: "BugHunter",
     timePosted: 24,
-    urlPost: "https://github.com/bughunter/debug-tool/jkl543mno210",
+    urlPost: "https://www.pornhub.com/view_video.php?viewkey=66e192c653ed0",
     numLikes: 30,
     numDislikes: 12,
     numShares: 5,
@@ -38,7 +38,7 @@ const posts = [
   {
     username: "ReactFanatic",
     timePosted: 48,
-    urlPost: "https://github.com/reactfanatic/react-components/ui432jkla098",
+    urlPost: "https://www.pornhub.com/view_video.php?viewkey=66e192c653ed0",
     numLikes: 18,
     numDislikes: 4,
     numShares: 10,
@@ -47,7 +47,7 @@ const posts = [
   {
     username: "NodeNinja",
     timePosted: 5,
-    urlPost: "https://github.com/nodeninja/api-server/xyz321abc876",
+    urlPost: "https://www.pornhub.com/view_video.php?viewkey=66e192c653ed0",
     numLikes: 60,
     numDislikes: 3,
     numShares: 20,
@@ -56,7 +56,7 @@ const posts = [
   {
     username: "CloudCoder",
     timePosted: 0,
-    urlPost: "https://github.com/cloudcoder/aws-setup-guide/qaz123wsx098",
+    urlPost: "https://www.pornhub.com/view_video.php?viewkey=66e192c653ed0",
     numLikes: 33,
     numDislikes: 7,
     numShares: 14,
@@ -65,8 +65,7 @@ const posts = [
   {
     username: "FullstackFan",
     timePosted: 72,
-    urlPost:
-      "https://github.com/fullstackfan/mern-stack-boilerplate/plo987mnb456",
+    urlPost: "https://www.pornhub.com/view_video.php?viewkey=66e192c653ed0",
     numLikes: 5,
     numDislikes: 1,
     numShares: 2,
@@ -75,7 +74,7 @@ const posts = [
   {
     username: "UIQueen",
     timePosted: 18,
-    urlPost: "https://github.com/uiqueen/design-system/abc987qwe654",
+    urlPost: "https://www.pornhub.com/view_video.php?viewkey=66e192c653ed0",
     numLikes: 100,
     numDislikes: 20,
     numShares: 30,
@@ -84,12 +83,12 @@ const posts = [
   {
     username: "AlgoWizard",
     timePosted: 96,
-    urlPost: "https://github.com/algowizard/leetcode-solutions/rty123vbn098",
+    urlPost: "https://www.pornhub.com/view_video.php?viewkey=66e192c653ed0",
     numLikes: 40,
     numDislikes: 0,
     numShares: 12,
     vpnRequired: false,
   },
-];
+]
 
-export default posts;
+export default posts
