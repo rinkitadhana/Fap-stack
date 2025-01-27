@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
-import { useRef } from "react";
-import { BiDislike } from "react-icons/bi";
-import { BiLike } from "react-icons/bi";
-import { FiShare } from "react-icons/fi";
-import { MdOutlineVpnLock } from "react-icons/md";
+import { useEffect, useState } from "react"
+import { useRef } from "react"
+import { BiDislike } from "react-icons/bi"
+import { BiLike } from "react-icons/bi"
+import { FiShare } from "react-icons/fi"
+import { MdOutlineVpnKey, MdOutlineVpnKeyOff } from "react-icons/md"
 
 interface PostProps {
-  username: string;
-  timePosted: number;
-  urlPost: string;
-  numLikes: number;
-  numDislikes: number;
-  numShares: number;
-  vpnRequired: boolean;
+  username: string
+  timePosted: number
+  urlPost: string
+  numLikes: number
+  numDislikes: number
+  numShares: number
+  vpnRequired: boolean
 }
 
 function PostBox({
@@ -24,25 +24,25 @@ function PostBox({
   numShares,
   vpnRequired,
 }: PostProps) {
-  const [isClicked, setIsClicked] = useState(false);
-  const boxRef = useRef<HTMLDivElement>(null);
+  const [isClicked, setIsClicked] = useState(false)
+  const boxRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (boxRef.current && !boxRef.current.contains(event.target as Node)) {
-        setIsClicked(false);
+        setIsClicked(false)
       }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
+    }
+    document.addEventListener("mousedown", handleClickOutside)
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
 
   const getDomain = (link: string) => {
-    const url = new URL(link);
-    return url.hostname;
-  };
+    const url = new URL(link)
+    return url.hostname
+  }
 
   return (
     <div
@@ -59,23 +59,21 @@ function PostBox({
               className=" select-none size-8 rounded-full"
               alt="profile"
             />
-            <span className="font-medium select-none">{username}</span>
+            <span className="font-medium ">{username}</span>
           </div>
-          <div className=" text-sm opacity-75 select-none">
-            • {timePosted} hrs ago
-          </div>
+          <div className=" text-sm opacity-75 ">• {timePosted} hrs ago</div>
         </div>
         <div
-          className={`  animate-pulse select-none flex gap-1.5 items-center  rounded-md px-2.5 py-0.5 border ${
+          className={`select-none flex gap-1.5 items-center  rounded-md px-3 py-1  ${
             vpnRequired
-              ? "text-green-600 border-green-600   bg-green-600/10"
-              : "text-red-500 border-red-500   bg-red-500/10"
+              ? "text-green-600/75 bg-green-600/10"
+              : "text-red-500/75 bg-red-500/10"
           } `}
         >
-          <span>
-            <MdOutlineVpnLock />
+          <span className=" text-lg">
+            {vpnRequired ? <MdOutlineVpnKey /> : <MdOutlineVpnKeyOff />}
           </span>
-          <span className=" font-medium">VPN</span>
+          <span className=" font-semibold">VPN</span>
         </div>
       </div>
       <div className=" select-none ">
@@ -125,7 +123,7 @@ function PostBox({
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default PostBox;
+export default PostBox
