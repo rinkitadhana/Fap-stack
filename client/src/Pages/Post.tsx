@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { FaCircleExclamation, FaPencil } from "react-icons/fa6"
 import Modal from "./ImagesModal"
-import { BorderBeam } from "../components/ui/border-beam"
 
 const Post = () => {
   const [isActive, setIsActive] = useState(false)
@@ -25,12 +24,6 @@ const Post = () => {
 
   return (
     <section className=" relative  flex flex-col  gap-2 border border-zinc-600 rounded-md p-3">
-      <BorderBeam
-        size={150}
-        duration={10}
-        colorFrom="#FB2C36"
-        colorTo="#FF6467"
-      />
       <div className="flex">
         <div className=" select-none flex flex-col items-center gap-4">
           <label
