@@ -9,7 +9,7 @@ body {
   @apply md:max-w-[1200px] mx-auto my-2 px-2 md:px-4;
 }
 .post-input {
-  @apply py-1 w-full px-1  placeholder-zinc-400 placeholder:select-none md:placeholder:text-lg placeholder:text-[0.95rem]  md:text-lg text-base bg-transparent outline-none;
+  @apply py-1 w-full px-1  placeholder-zinc-400 placeholder:select-none  placeholder:text-lg   md:text-lg text-base bg-transparent outline-none;
 }
 
 .btn {

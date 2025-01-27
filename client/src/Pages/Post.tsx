@@ -56,7 +56,7 @@ const Post = () => {
           {isActive && (
             <div className=" select-none flex gap-4 items-center">
               <input
-                placeholder="Username"
+                placeholder="username"
                 className=" w-fit bg-transparent outline-none border border-zinc-600/35 rounded py-1 px-2"
               />
               <div className="hidden md:flex  gap-1.5 items-center animate-pulse ">
@@ -70,7 +70,7 @@ const Post = () => {
           <input
             onChange={handleInputChange}
             onFocus={() => setIsActive(true)}
-            placeholder="Your homies are waiting for your link!"
+            placeholder="Share your link here!"
             className={`  ${
               hasValue && hasDomain && hasHttps ? "text-blue-500" : ""
             } post-input`}
