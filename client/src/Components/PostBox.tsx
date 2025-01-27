@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react"
 import { useRef } from "react"
-import { BiDislike } from "react-icons/bi"
-import { BiLike } from "react-icons/bi"
-import { FiShare } from "react-icons/fi"
-import { MdOutlineVpnKey, MdOutlineVpnKeyOff } from "react-icons/md"
+import { IoIosFlag, IoMdThumbsDown, IoMdThumbsUp } from "react-icons/io"
+import { MdOutlineVpnKey, MdOutlineVpnKeyOff, MdShare } from "react-icons/md"
 
 interface PostProps {
   username: string
@@ -55,7 +53,7 @@ function PostBox({
         <div className="  flex gap-2 items-center">
           <div className=" overflow-hidden  flex gap-2 items-center">
             <img
-              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
+              src="./Img/Avatar/woman.png"
               className=" select-none size-8 rounded-full"
               alt="profile"
             />
@@ -101,9 +99,9 @@ function PostBox({
           From {getDomain(urlPost)}
         </a>
       </div>
-      <div className=" flex gap-2"></div>
-      <div className=" flex justify-end gap-4  px-4 items-center">
-        <div className="flex gap-2 items-center">
+      <div className="flex justify-between gap-4 items-center"></div>
+      <div className=" flex justify-between gap-4   items-center">
+        {/* <div className="flex gap-2 items-center">
           <p className="select-none">{numLikes}</p>
           <button className=" btn">
             <BiLike />
@@ -120,6 +118,46 @@ function PostBox({
           <button className=" text-xl">
             <FiShare />
           </button>
+        </div> */}
+        <div>
+          <button
+            title="report"
+            className=" p-2  rounded-md text-2xl bg-zinc-800 text-zinc-300 transition-all duration-200 hover:text-red-400 "
+          >
+            <IoIosFlag />
+          </button>
+        </div>
+        <div className="flex gap-3 items-center">
+          <div className=" select-none flex items-center ">
+            <div>
+              <button
+                title="like"
+                className=" p-2 rounded-l-md text-2xl bg-zinc-800  text-zinc-300 hover:text-green-600 transition-all duration-200"
+              >
+                <IoMdThumbsUp />
+              </button>
+            </div>
+            <div className=" p-2 mx-auto font-semibold  bg-zinc-950   flex justify-center  gap-1 items-center">
+              <p>{numLikes}</p>/<p>{numDislikes}</p>
+            </div>
+
+            <div>
+              <button
+                title="dislike"
+                className=" p-2  rounded-r-md text-2xl bg-zinc-800 text-zinc-300 hover:text-red-600 transition-all duration-200"
+              >
+                <IoMdThumbsDown />
+              </button>
+            </div>
+          </div>
+          <div>
+            <button
+              title="share"
+              className=" p-2  rounded-md text-2xl bg-zinc-800 text-zinc-300 transition-all duration-200 hover:text-blue-500 "
+            >
+              <MdShare />
+            </button>
+          </div>
         </div>
       </div>
     </div>
