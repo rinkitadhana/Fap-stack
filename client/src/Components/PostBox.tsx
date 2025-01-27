@@ -52,8 +52,8 @@ function PostBox({
       }`}
     >
       <div className=" flex justify-between items-center">
-        <div className=" flex gap-2 items-center">
-          <div className=" flex gap-2 items-center">
+        <div className="  flex gap-2 items-center">
+          <div className=" overflow-hidden  flex gap-2 items-center">
             <img
               src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
               className=" select-none size-8 rounded-full"
@@ -61,10 +61,10 @@ function PostBox({
             />
             <span className="font-medium ">{username}</span>
           </div>
-          <div className=" text-sm opacity-75 ">• {timePosted} hrs ago</div>
+          <div className="  text-sm opacity-75 ">• {timePosted} hrs ago</div>
         </div>
         <div
-          className={`select-none flex gap-1.5 items-center  rounded-md px-3 py-1  ${
+          className={`  select-none flex gap-1.5 items-center  rounded-md px-3 py-1  ${
             vpnRequired
               ? "text-green-600/75 bg-green-600/10"
               : "text-red-500/75 bg-red-500/10"
