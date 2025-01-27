@@ -1,16 +1,17 @@
-import { useEffect, useState } from "react"
-import { useRef } from "react"
-import { IoIosFlag, IoMdThumbsDown, IoMdThumbsUp } from "react-icons/io"
-import { MdOutlineVpnKey, MdOutlineVpnKeyOff, MdShare } from "react-icons/md"
+import { useEffect, useState } from "react";
+import { useRef } from "react";
+import { IoIosFlag, IoMdThumbsDown, IoMdThumbsUp } from "react-icons/io";
+import { MdOutlineVpnKey, MdOutlineVpnKeyOff, MdShare } from "react-icons/md";
 
 interface PostProps {
-  username: string
-  timePosted: number
-  urlPost: string
-  numLikes: number
-  numDislikes: number
-  numShares: number
-  vpnRequired: boolean
+  username: string;
+  timePosted: number;
+  urlPost: string;
+  numLikes: number;
+  numDislikes: number;
+  numShares: number;
+  vpnRequired: boolean;
+  avatar?: string;
 }
 
 function PostBox({
@@ -21,28 +22,29 @@ function PostBox({
   numDislikes,
   numShares,
   vpnRequired,
+  avatar,
 }: PostProps) {
-  const [isClicked, setIsClicked] = useState(false)
-  const boxRef = useRef<HTMLDivElement>(null)
+  const [isClicked, setIsClicked] = useState(false);
+  const boxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (boxRef.current && !boxRef.current.contains(event.target as Node)) {
-        setIsClicked(false)
+        setIsClicked(false);
       }
-    }
-    document.addEventListener("mousedown", handleClickOutside)
+    };
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [])
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const getDomain = (link: string) => {
-    const url = new URL(link)
-    return url.hostname
-  }
+    const url = new URL(link);
+    return url.hostname;
+  };
 
-  const siteLink = getDomain(urlPost)
+  const siteLink = getDomain(urlPost);
   return (
     <div
       ref={boxRef}
@@ -54,7 +56,7 @@ function PostBox({
         <div className="  flex gap-2 items-center">
           <div className=" overflow-hidden  flex gap-2 items-center">
             <img
-              src="./Img/Avatar/woman.png"
+              src={`./Img/Avatar/${avatar ? avatar : "woman"}.png`}
               className=" select-none size-8 rounded-full"
               alt="profile"
             />
@@ -145,7 +147,7 @@ function PostBox({
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default PostBox
+export default PostBox;
