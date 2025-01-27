@@ -1,29 +1,36 @@
-import { useState } from "react";
-import { FaCircleExclamation, FaPencil } from "react-icons/fa6";
-import Modal from "./ImagesModal";
+import { useState } from "react"
+import { FaCircleExclamation, FaPencil } from "react-icons/fa6"
+import Modal from "./ImagesModal"
+import { BorderBeam } from "../components/ui/border-beam"
 
 const Post = () => {
-  const [isActive, setIsActive] = useState(false);
-  const [hasValue, setHasValue] = useState(false);
-  const [hasHttps, setHasHttps] = useState(false);
-  const [hasDomain, setHasDomain] = useState(false);
-  const [preview, setPreview] = useState<string | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isActive, setIsActive] = useState(false)
+  const [hasValue, setHasValue] = useState(false)
+  const [hasHttps, setHasHttps] = useState(false)
+  const [hasDomain, setHasDomain] = useState(false)
+  const [preview, setPreview] = useState<string | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const defaultImage =
-    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png";
+    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setHasValue(value.length > 0);
+    const value = e.target.value
+    setHasValue(value.length > 0)
 
-    setHasHttps(value.startsWith("https://"));
+    setHasHttps(value.startsWith("https://"))
 
-    const domainPattern = /^https:\/\/.+\..+/;
-    setHasDomain(domainPattern.test(value));
-  };
+    const domainPattern = /^https:\/\/.+\..+/
+    setHasDomain(domainPattern.test(value))
+  }
 
   return (
-    <section className=" flex flex-col  gap-2 border border-zinc-600 rounded-md p-3">
+    <section className=" relative  flex flex-col  gap-2 border border-zinc-600 rounded-md p-3">
+      <BorderBeam
+        size={150}
+        duration={10}
+        colorFrom="#FB2C36"
+        colorTo="#FF6467"
+      />
       <div className="flex">
         <div className=" select-none flex flex-col items-center gap-4">
           <label
@@ -33,7 +40,7 @@ const Post = () => {
             <div className="size-9 rounded-full overflow-hidden">
               <button
                 onClick={() => {
-                  setIsModalOpen(true);
+                  setIsModalOpen(true)
                 }}
               >
                 <img
@@ -105,14 +112,14 @@ const Post = () => {
         <Modal
           isOpen={isModalOpen}
           onClose={() => {
-            setIsModalOpen(false);
+            setIsModalOpen(false)
           }}
           title={"Select Your Avatar"}
           setPreview={setPreview}
         />
       )}
     </section>
-  );
-};
+  )
+}
 
-export default Post;
+export default Post

@@ -1,17 +1,17 @@
-import { useState } from "react";
+import { useState } from "react"
 
 interface CategoryProps {
-  setCategory: (category: string) => void;
+  setCategory: (category: string) => void
 }
 
 const Category = ({ setCategory }: CategoryProps) => {
-  const [openCategory, setOpenCategory] = useState("");
+  const [openCategory, setOpenCategory] = useState("")
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setCategory((e.target as HTMLButtonElement).textContent || "");
-    setOpenCategory((e.target as HTMLButtonElement).textContent || "");
-  };
+    setCategory((e.target as HTMLButtonElement).textContent || "")
+    setOpenCategory((e.target as HTMLButtonElement).textContent || "")
+  }
   return (
-    <section className="border h-full border-zinc-700 rounded-md p-3 flex flex-col gap-2">
+    <section className="border h-full border-zinc-700 rounded-md p-3 flex flex-col gap-2 ">
       <h1 className=" text-lg opacity-60 font-semibold">
         Filter & Categories.
       </h1>
@@ -48,7 +48,7 @@ const Category = ({ setCategory }: CategoryProps) => {
         </button>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Category;
+export default Category

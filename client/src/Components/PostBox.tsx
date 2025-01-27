@@ -79,7 +79,7 @@ function PostBox({
       <div className=" select-none ">
         <a
           onClick={() => setIsClicked(true)}
-          href=""
+          href={urlPost}
           target="_blank"
           className="hover:brightness-75 transition-all duration-200 cursor-pointer "
         >
