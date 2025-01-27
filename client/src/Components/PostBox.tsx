@@ -8,7 +8,7 @@ import { MdOutlineVpnLock } from "react-icons/md";
 interface PostProps {
   username: string;
   timePosted: number;
-  urlPost: any;
+  urlPost: string;
   numLikes: number;
   numDislikes: number;
   numShares: number;
