@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Notification from "./Notification";
+interface FooterProps {
+  clicksCounted: number;
+  setClicksCounted: (count: number) => void;
+}
 
-function Footer() {
-  const [clicksCounted, setClicksCounted] = useState(11);
+function Footer({ clicksCounted, setClicksCounted }: FooterProps) {
   const [showNotification, setShowNotification] = useState(false);
 
   const handleClick = () => {

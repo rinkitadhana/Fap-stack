@@ -9,6 +9,7 @@ import { useState } from "react";
 
 const App = () => {
   const [category, setCategory] = useState("");
+  const [clicksCounted, setClicksCounted] = useState(11);
   return (
     <Screen>
       <div className=" flex flex-col gap-2">
@@ -23,7 +24,10 @@ const App = () => {
         </div>
 
         <IndexPage categories={category} />
-        <Footer />
+        <Footer
+          clicksCounted={clicksCounted}
+          setClicksCounted={setClicksCounted}
+        />
       </div>
       <PostButtom />
     </Screen>
