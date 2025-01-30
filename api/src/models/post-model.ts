@@ -4,6 +4,8 @@ interface IPost extends Document {
   avatar: string
   username: string
   link: string
+  thumbnail: string
+  banner: string
   createdAt: Date
   UpdatedAt: Date
 }
@@ -23,10 +25,18 @@ const postSchema = new mongoose.Schema<IPost>(
       unique: true,
       trim: true,
     },
+    thumbnail: {
+      type: String,
+    },
+    banner: {
+      type: String,
+    },
   },
   { timestamps: true, collection: "post-data" }
 )
 
 const Post = mongoose.model<IPost>("Post", postSchema)
 
-export { Post, IPost }
+export default Post
+
+export { IPost }

@@ -1,21 +1,40 @@
-import mongoose, { Document } from "mongoose"
+import mongoose, { Document, Schema } from "mongoose"
 
 interface IStats extends Document {
-  like: Number
-  dislike: Number
-  share: Number
-  clicked: Number
+  postId: Schema.Types.ObjectId
+  like: number
+  dislike: number
+  share: number
+  click: number
+  report: number
 }
 const postStatsSchema = new mongoose.Schema<IStats>(
   {
-    like: Number,
-    dislike: Number,
-    share: Number,
-    clicked: Number,
+    postId: Schema.Types.ObjectId,
+    like: {
+      type: Number,
+      default: 0,
+    },
+    dislike: {
+      type: Number,
+      default: 0,
+    },
+    share: {
+      type: Number,
+      default: 0,
+    },
+    click: {
+      type: Number,
+      default: 0,
+    },
+    report: {
+      type: Number,
+      default: 0,
+    },
   },
   { collection: "post-stats" }
 )
 
 const PostStats = mongoose.model<IStats>("PostStats", postStatsSchema)
 
-export { PostStats, IStats }
+export default PostStats
