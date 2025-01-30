@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
-import { useRef } from "react";
-import { IoIosFlag, IoMdThumbsDown, IoMdThumbsUp } from "react-icons/io";
-import { MdOutlineVpnKey, MdOutlineVpnKeyOff, MdShare } from "react-icons/md";
+import { useEffect, useState } from "react"
+import { useRef } from "react"
+import { IoIosFlag, IoMdThumbsDown, IoMdThumbsUp } from "react-icons/io"
+import { MdOutlineVpnKey, MdOutlineVpnKeyOff, MdShare } from "react-icons/md"
 
 interface PostProps {
-  username: string;
-  timePosted: number;
-  urlPost: string;
-  numLikes: number;
-  numDislikes: number;
-  numShares: number;
-  vpnRequired: boolean;
-  avatar?: string;
+  username: string
+  timePosted: number
+  urlPost: string
+  numLikes: number
+  numDislikes: number
+  numShares: number
+  vpnRequired: boolean
+  avatar?: string
 }
 
 function PostBox({
@@ -24,27 +24,30 @@ function PostBox({
   vpnRequired,
   avatar,
 }: PostProps) {
-  const [isClicked, setIsClicked] = useState(false);
-  const boxRef = useRef<HTMLDivElement>(null);
+  const [isClicked, setIsClicked] = useState(false)
+  const boxRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (boxRef.current && !boxRef.current.contains(event.target as Node)) {
-        setIsClicked(false);
+        setIsClicked(false)
       }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
+    }
+    document.addEventListener("mousedown", handleClickOutside)
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
 
   const getDomain = (link: string) => {
-    const url = new URL(link);
-    return url.hostname;
-  };
+    const url = new URL(link)
+    return url.hostname
+      .replace(/^www\./, "")
+      .split(".")
+      .slice(0, -1)
+      .join(".")
+  }
 
-  const siteLink = getDomain(urlPost);
   return (
     <div
       ref={boxRef}
@@ -77,9 +80,8 @@ function PostBox({
           <span className=" font-semibold">VPN</span>
         </div>
       </div>
-      <div className=" select-none ">
+      <div onClick={() => setIsClicked(true)} className=" select-none ">
         <a
-          onClick={() => setIsClicked(true)}
           href={urlPost}
           target="_blank"
           className="hover:brightness-75 transition-all duration-200 cursor-pointer "
@@ -95,11 +97,11 @@ function PostBox({
           </div>
         </a>
         <a
-          href={siteLink}
+          href={urlPost}
           target="_blank"
           className=" text-sm opacity-75 hover:opacity-100 transition-all duration-200"
         >
-          From {siteLink}
+          From {getDomain(urlPost)}
         </a>
       </div>
       <div className="flex justify-between gap-4 items-center"></div>
@@ -147,7 +149,7 @@ function PostBox({
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default PostBox;
+export default PostBox
