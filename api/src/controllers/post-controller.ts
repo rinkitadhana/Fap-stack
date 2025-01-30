@@ -1,32 +1,35 @@
 import { Request, Response } from "express"
-import { IPost, Post } from "../models/post-model"
-import errorHandler from "../utils/errorHandler"
+import Post from "models/post-model"
+import PostStats from "models/postStats-model"
+import errorHandler from "utils/errorHandler"
 
-const postHandler = async (req: Request, res: Response): Promise<void> => {
+const PostHandler = async (req: Request, res: Response) => {
   try {
-    const { avatar, username, link } = req.body
-    if (!avatar || !username || !link) {
-      res.status(400).json({ message: "Missing credentials!" })
+    const { username, link, avatar, thumbnail, banner } = req.body
+    if (!link) {
+      res.status(400).json({ message: "Link isn't provided!" })
       return
     }
-
-    const post = await Post.findOne<IPost>({ link })
-    if (post) {
-      res.status(400).json({ message: "Post already exists!" })
-      return
-    }
-
     const newPost = new Post({
-      avatar,
       username,
       link,
+      avatar,
+      thumbnail,
+      banner,
     })
-    newPost.save()
-
-    res.status(200).json({ message: "Post created successfully!" })
+    await newPost.save()
+    const newPostStats = new PostStats({
+      postId: newPost._id,
+    })
+    await newPostStats.save()
+    res.status(201).json({
+      message: "Post created successfully!",
+      post: newPost,
+      stats: newPostStats,
+    })
   } catch (error) {
     errorHandler(res, error)
   }
 }
 
-export { postHandler }
+export { PostHandler }
