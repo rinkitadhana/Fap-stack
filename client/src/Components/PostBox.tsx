@@ -80,11 +80,11 @@ function PostBox({
           <span className=" font-semibold">VPN</span>
         </div>
       </div>
-      <div onClick={() => setIsClicked(true)} className=" select-none ">
+      <div onClick={() => setIsClicked(true)} className=" w-full  ">
         <a
           href={urlPost}
           target="_blank"
-          className="hover:brightness-75 transition-all duration-200 cursor-pointer "
+          className="w-full select-none hover:brightness-75 transition-all duration-200 cursor-pointer "
         >
           <div className="relative">
             <img
