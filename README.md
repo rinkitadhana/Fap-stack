@@ -1,3 +1,3 @@
-# Fap-stach
+# Fap-stack
 
 A link sharing platform
