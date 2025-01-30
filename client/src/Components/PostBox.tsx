@@ -140,6 +140,7 @@ function PostBox({
           </div>
           <div>
             <button
+              onClick={() => navigator.share({ url: urlPost })}
               title="share"
               className=" p-2  rounded-md text-2xl bg-zinc-800 text-zinc-300 transition-all duration-200 hover:text-blue-500 "
             >
